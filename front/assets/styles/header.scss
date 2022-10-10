@@ -1,0 +1,66 @@
+@import "reset.scss";
+@import "layout";
+
+.Header {
+  height: 50px;
+  border-bottom: 1px solid $elementColor;
+  display: flex;
+  justify-content: center;
+  .Layout {
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    .Homebtn {
+      width: 50%;
+      padding-left: 1rem;
+      h1 {
+        font-size: 24px;
+        font-weight: 700;
+        font-family: $titleFont;
+        margin-top: 0.6rem;
+        a {
+          cursor: pointer;
+        }
+      }
+    }
+    .MenuList {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+      .Menubtns {
+        display: flex;
+        flex-direction: row;
+        li {
+          padding-right: 1rem;
+          margin-top: 0.8rem;
+          &:first-child {
+            font-family: $titleFont;
+            font-size: 14px;
+            font-weight: 600;
+            padding-top: 0.1rem;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .Header {
+    width: 100%;
+    .Layout {
+      width: 100%;
+      .MenuList {
+        .Menubtns {
+          li {
+            padding-right: 0.5rem;
+            &:last-child {
+              padding-right: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
