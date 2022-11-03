@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from '../../assets/styles/card.module.scss';
+import { cardProps, cardList } from '../../types/card/card';
 
-const ReviewCard = () => {
+const ReviewCard = ({card}: cardProps): React.ReactElement => {
+  useEffect(() => {
+    console.log(card)
+  },[])
+
   return (
     <>
       <div className={Card.card}>
         <div className={Card.cardTitle}>
-          <h2></h2>
+          <h2>{card.title}</h2>
           <p></p>
         </div>
         <div className={Card.cardImage}>
-          <img src="../../assets/img/7874_1.jpeg" alt="" />
+          <img src={card.url} alt="" />
 
         </div>
         <div className={Card.cardReaction}>
